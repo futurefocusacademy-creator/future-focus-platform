@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Chatbot from './components/Chatbot';
-import AdmissionPopup from './components/AdmissionPopup';
+
 
 
 export default function App() {
@@ -36,8 +36,6 @@ export default function App() {
         {/* Immersive Global Widgets */}
         <FloatingWhatsApp />
         <Chatbot />
-        <AdmissionPopup />
-
       </div>
     
   );
