@@ -6,7 +6,7 @@ import LandingPage from './pages/LandingPage';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Chatbot from './components/Chatbot';
 import AdmissionPopup from './components/AdmissionPopup';
-import { ThemeProvider } from './context/ThemeContext';
+
 
 export default function App() {
   const { pathname } = useLocation();
@@ -17,7 +17,7 @@ export default function App() {
   }, [pathname]);
 
   return (
-    <ThemeProvider>
+
       <div className="relative min-h-screen selection:bg-royal/30">
         
         {/* Global Floating Sticky Navbar */}
@@ -39,6 +39,6 @@ export default function App() {
         <AdmissionPopup />
 
       </div>
-    </ThemeProvider>
+    
   );
 }
