@@ -1,129 +1,225 @@
 import React from 'react';
-import { Quote, Sparkles, CheckCircle2, ShieldCheck, Mail, ArrowRight } from 'lucide-react';
+import {
+  Quote,
+  Sparkles,
+  CheckCircle2,
+  ShieldCheck,
+  Mail
+} from 'lucide-react';
 
 export default function Founder() {
+
   const achievements = [
-    'Senior Corporate Training Strategist',
-    '15+ Years in Educational Excellence & Placement',
-    'Mentored 10,000+ students and professionals',
-    'Expert in Soft Skills, Aptitude, & Technical Coaching'
+    'Corporate Training Expert',
+    'Placement & Career Development Mentor',
+    'Communication & Leadership Coach',
+    'Industry-Focused Skill Development Specialist'
   ];
 
   return (
-    <section className="relative py-24 bg-soft dark:bg-navy-dark transition-colors duration-500 overflow-hidden">
-      
-      {/* Glow Effects */}
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-royal/10 dark:bg-royal/15 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-gold/5 dark:bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <section className="relative py-24 bg-soft overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-royal/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Title */}
+
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-full text-xs font-bold uppercase tracking-widest">
+
+          <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-royal/10 text-royal rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+
             <Quote className="w-3.5 h-3.5 text-gold" />
-            Leadership Vision
+
+            Message from the Founder
+
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep dark:text-white tracking-tight">
-            Message From Our <span className="text-royal dark:text-royal-light">Founder</span>
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep tracking-tight">
+
+            Leadership Vision of
+            <span className="text-royal"> Future Focus Academy</span>
+
           </h2>
-          <p className="text-slate-500 dark:text-slate-300 font-medium">
-            Learn the philosophy and purpose behind the establishment of Future Focus Academy, directly from our director.
+
+          <p className="text-slate-500 font-medium leading-relaxed">
+
+            A message dedicated to inspiring students, empowering careers, and shaping confident professionals for the future.
+
           </p>
+
         </div>
 
-        {/* Dual Column Layout */}
+        {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column: Premium Graphical Showcase Card (Founder Avatar) */}
+
+          {/* LEFT CARD */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-sm glass-card border border-white/20 dark:border-white/5 p-6 shadow-2xl relative overflow-hidden group hover:scale-[1.01] transition-transform duration-500">
-              
-              {/* Profile Card Header */}
+
+            <div className="w-full max-w-sm bg-white border border-slate-200 rounded-[32px] p-8 shadow-[0_0_40px_rgba(11,96,176,0.08)] relative overflow-hidden hover:scale-[1.02] transition-all duration-500">
+
+              {/* Header */}
               <div className="flex justify-between items-center mb-6">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Academy Director</span>
-                <span className="flex items-center gap-1.5 text-xs text-green-500 font-bold px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span>
-                  Active Advisor
+
+                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                  Founder & Director
                 </span>
+
+                <span className="flex items-center gap-1.5 text-xs text-green-500 font-bold px-2 py-1 rounded-full bg-green-500/10 border border-green-500/10">
+
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span>
+
+                  Active Mentor
+
+                </span>
+
               </div>
 
-              {/* Styled Digital Avatar Vector Visual */}
+              {/* Avatar */}
               <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-royal to-royal-light flex items-center justify-center shadow-lg relative mb-6">
-                <span className="font-extrabold text-4xl text-white tracking-tight">PA</span>
-                {/* Glow ring around avatar */}
+
+                <span className="font-extrabold text-4xl text-white tracking-tight">
+                  PA
+                </span>
+
                 <div className="absolute inset-0 rounded-full border-2 border-gold/40 animate-ping [animation-duration:3s] pointer-events-none"></div>
+
               </div>
 
-              {/* Founder Profile Details */}
+              {/* Founder Details */}
               <div className="text-center space-y-2 mb-6">
-                <h3 className="font-extrabold text-xl text-navy-deep dark:text-white">Prasanth Ayyappan</h3>
-                <p className="text-xs text-royal dark:text-royal-light font-bold">Founder & Director</p>
-                <div className="flex justify-center gap-1">
+
+                <h3 className="font-extrabold text-2xl text-navy-deep">
+                  Prasanth Ayyappan
+                </h3>
+
+                <p className="text-sm text-royal font-bold">
+                  Founder & Director
+                </p>
+
+                <div className="flex justify-center gap-1 items-center">
+
                   <ShieldCheck className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] text-slate-400 font-semibold">Ex-MNC Trainer / Tech Career Strategist</span>
+
+                  <span className="text-[11px] text-slate-400 font-semibold">
+                    Career Mentor & Training Strategist
+                  </span>
+
                 </div>
+
               </div>
 
-              {/* Key Credentials List */}
-              <div className="space-y-2.5 pt-4 border-t border-navy-deep/5 dark:border-white/5 text-left text-xs font-semibold text-slate-500 dark:text-slate-300">
+              {/* Achievements */}
+              <div className="space-y-3 pt-5 border-t border-slate-100 text-left text-sm font-semibold text-slate-500">
+
                 {achievements.map((ach, idx) => (
+
                   <div key={idx} className="flex items-center gap-2">
-                     <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+
+                    <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+
                     <span>{ach}</span>
+
                   </div>
+
                 ))}
+
               </div>
 
-              {/* Quick direct contact button */}
+              {/* Contact Button */}
               <button
                 onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('contact')?.scrollIntoView({
+                    behavior: 'smooth'
+                  });
                 }}
-                className="w-full mt-6 py-2.5 bg-royal/10 hover:bg-royal text-royal dark:text-royal-light hover:text-white rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full mt-8 py-3 bg-royal/10 hover:bg-royal text-royal hover:text-white rounded-2xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Mail className="w-3.5 h-3.5" /> Book a Consultation
+
+                <Mail className="w-4 h-4" />
+
+                Connect with Us
+
               </button>
 
             </div>
+
           </div>
 
-          {/* Right Column: Emotionally Engaging Quote & Message */}
-          <div className="lg:col-span-7 space-y-6 text-left relative">
-            
-            {/* Massive Quote Icon Overlay (absolute background) */}
-            <div className="absolute -top-10 -left-6 text-royal/5 dark:text-white/5 select-none pointer-events-none">
+          {/* RIGHT CONTENT */}
+          <div className="lg:col-span-7 space-y-8 text-left relative">
+
+            {/* Quote Icon */}
+            <div className="absolute -top-10 -left-6 text-royal/5 select-none pointer-events-none">
+
               <Quote className="w-32 h-32" />
+
             </div>
 
-            <div className="space-y-4 relative z-10">
-              
-              {/* Highlight Quote */}
-              <h3 className="text-xl sm:text-2xl font-bold text-navy-deep dark:text-white leading-relaxed italic border-l-4 border-gold pl-4">
-                "Our mission is to build a bridge between raw potential and career excellence. We don't just teach modules; we cultivate critical thinkers who excel in the real world."
+            <div className="space-y-6 relative z-10">
+
+              {/* Main Quote */}
+              <h3 className="text-2xl sm:text-3xl font-bold text-navy-deep leading-relaxed italic border-l-4 border-gold pl-5">
+
+                "Success begins with learning, confidence, determination, and the courage to move forward despite challenges."
+
               </h3>
-              
-              {/* Core message text */}
-              <p className="text-slate-500 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                We founded Future Focus Academy as a response to the growing misalignment between standard academic curricula and the practical, interactive skillsets required in high-growth companies. Having spent years training professionals in communication and technical fields, I realized that true transformation happens when students receive personal validation, hands-on feedback, and rigorous structured training.
-              </p>
 
-              <p className="text-slate-500 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                Every course we deliver, every classroom dynamic we foster, and every placement channel we coordinate is oriented around a single commitment: the student first. We are committed to accompanying you on your career journey, providing the precise discipline, direction, and mentorship required to secure your placements and realize your long-term ambitions.
-              </p>
+              {/* Message */}
+              <div className="space-y-5 text-slate-500 leading-relaxed text-sm sm:text-base">
+
+                <p>
+                  Welcome to Future Focus Academy.
+                </p>
+
+                <p>
+                  At Future Focus Academy, we believe that every student carries the power to build a successful future with the right guidance, confidence, and opportunities. Our mission is to inspire young minds, develop essential skills, and prepare individuals to face the competitive world with courage and clarity.
+                </p>
+
+                <p>
+                  We are committed to creating a learning environment that encourages growth, discipline, leadership, communication, and career excellence. Every session, every activity, and every interaction at our academy is designed to shape students into confident professionals and responsible individuals.
+                </p>
+
+                <p>
+                  Success does not happen overnight. It begins with learning, determination, and the willingness to move forward despite challenges. We are here to support that journey and help students discover their true potential.
+                </p>
+
+                <p>
+                  Together, let us build a brighter future where dreams turn into achievements.
+                </p>
+
+                <p>
+                  Thank you for being a part of Future Focus Academy.
+                </p>
+
+              </div>
+
             </div>
 
-            {/* Signature & Closing */}
-            <div className="pt-4 border-t border-navy-deep/5 dark:border-white/5 flex items-center justify-between">
+            {/* Signature */}
+            <div className="pt-6 border-t border-slate-200 flex items-center justify-between flex-wrap gap-4">
+
               <div>
-                <p className="font-extrabold text-navy-deep dark:text-white text-base">Prasanth Ayyappan</p>
-                <p className="text-xs text-slate-400">Founder & Director, Future Focus Academy</p>
+
+                <p className="font-extrabold text-navy-deep text-lg">
+                  Prasanth Ayyappan
+                </p>
+
+                <p className="text-sm text-slate-400">
+                  Founder & Director, Future Focus Academy
+                </p>
+
               </div>
-              
-              {/* Handwritten Signature Block (Custom Web Design style font) */}
-              <div className="font-serif italic text-xl sm:text-2xl text-gold select-none transform -rotate-3 tracking-wide">
-                Prasanth Ayyappan
+
+              <div className="font-serif italic text-2xl text-gold select-none transform -rotate-3 tracking-wide">
+
+                “Career Starts Here”
+
               </div>
+
             </div>
 
           </div>
@@ -131,6 +227,7 @@ export default function Founder() {
         </div>
 
       </div>
+
     </section>
   );
 }

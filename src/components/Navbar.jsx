@@ -94,8 +94,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 px-4 py-3">
 
       <div className="max-w-4xl mx-auto">
+
         {/* Main Navbar */}
-        <div className="bg-white/95 backdrop-blur-xl border border-slate-200 rounded-[22px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-[64px] px-6 flex items-center justify-center transition-all duration-300">
+        <div className="bg-white/95 backdrop-blur-xl border border-[#0B60B0]/20 rounded-[22px] shadow-[0_0_40px_rgba(11,96,176,0.28)] h-[64px] px-3 flex items-center justify-center transition-all duration-300">
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-10">
@@ -114,7 +115,7 @@ export default function Navbar() {
                 {item.label}
 
                 {activeSection === item.id && (
-                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-1.5 h-1.5 rounded-full bg-[#0B60B0]"></span>
+                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-1.5 h-1.5 rounded-full bg-[#0B60B0] shadow-[0_0_10px_rgba(11,96,176,0.8)]"></span>
                 )}
 
               </button>
@@ -142,7 +143,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
 
-          <div className="lg:hidden mt-3 bg-white rounded-[24px] border border-slate-200 shadow-2xl p-6 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="lg:hidden mt-3 bg-white rounded-[24px] border border-[#0B60B0]/20 shadow-[0_0_25px_rgba(11,96,176,0.15)] p-6 animate-in fade-in slide-in-from-top-4 duration-300">
 
             <div className="flex flex-col gap-5">
 
