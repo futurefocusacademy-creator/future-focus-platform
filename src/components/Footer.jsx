@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { GraduationCap, Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { GraduationCap, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import footerLogo from '../assets/footer-logo.png';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
   const socialLinks = [
     {
       label: 'Facebook',
@@ -22,19 +19,31 @@ export default function Footer() {
     {
       label: 'Instagram',
       path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z'
-    },
-    {
-      label: 'Youtube',
-      path: 'M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.53 3.545 12 3.545 12 3.545s-7.53 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.022 0 12 0 12s0 3.978.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.858.508 9.388.508 9.388.508s7.53 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.978 24 12 24 12s0-3.978-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'
     }
   ];
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubscribed(true);
-    setEmail('');
-    setTimeout(() => setSubscribed(false), 4000);
+  const quickLinks = [
+    { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
+    { label: 'Courses', id: 'courses' },
+    { label: 'Features', id: 'features' },
+    { label: 'Gallery', id: 'gallery' },
+    { label: 'Contact', id: 'contact' }
+  ];
+
+  const services = [
+    'Corporate Training',
+    'Placement Training',
+    'Spoken English',
+    'Communication Skills',
+    'Power BI',
+    'Full Stack Development',
+    'Python'
+  ];
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollUp = () => {
@@ -42,34 +51,33 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-navy-dark text-white pt-16 pb-8 border-t border-white/5 overflow-hidden">
-      {/* Decorative Glow Orbs */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-royal/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+    <footer className="relative bg-white text-slate-600 pt-20 pb-8 border-t border-slate-100 rounded-t-[40px] shadow-[0_-10px_40px_rgba(11,96,176,0.03)] overflow-hidden">
+      {/* Soft Glow Accents */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#EAF4FF]/50 rounded-full blur-[80px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-royal/5 rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
           {/* Brand Info */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-royal to-royal-light flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight">
-                Future<span className="text-royal-light">Focus</span>
-              </span>
-            </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Future Focus Academy empowers students with modern technical skills, career-focused learning, and real-world project experience to succeed in tomorrow's technology landscape.
+          <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+            <img 
+              src={footerLogo} 
+              alt="Future Focus Academy" 
+              className="h-24 md:h-32 lg:h-36 w-auto object-contain hover:scale-[1.03] hover:drop-shadow-[0_0_12px_rgba(11,96,176,0.3)] transition-all duration-300" 
+            />
+            
+            <p className="text-slate-500 text-sm leading-relaxed font-medium max-w-[280px] md:max-w-none">
+              Future Focus Academy empowers students through communication, placement, technical, and career-focused training programs.
             </p>
-            <div className="flex items-center gap-3">
+            
+            <div className="flex items-center gap-3 pt-2">
               {socialLinks.map((link, idx) => (
                 <a
                   key={idx}
                   href="#"
                   aria-label={link.label}
-                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-royal text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
+                  className="w-10 h-10 rounded-full bg-[#F8FBFF] hover:bg-royal text-royal hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-royal/20 active:scale-95 border border-royal/10"
                 >
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
                     <path d={link.path} />
@@ -81,25 +89,18 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-sm tracking-widest uppercase text-royal-light mb-5">Quick Links</h4>
-            <ul className="space-y-3 text-slate-400 text-sm">
-              {[
-                { label: 'Home', id: 'home' },
-                { label: 'About Academy', id: 'about' },
-                { label: 'Courses Offered', id: 'courses' },
-                { label: 'Key Features', id: 'features' },
-                { label: 'Success Stories', id: 'success-stories' },
-                { label: 'Campus Gallery', id: 'gallery' },
-                { label: 'Inquiry & Support', id: 'contact' }
-              ].map((link, idx) => (
+            <h4 className="font-extrabold text-navy-deep text-lg mb-6 flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-royal"></div>
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, idx) => (
                 <li key={idx}>
                   <button
-                    onClick={() => {
-                      const el = document.getElementById(link.id);
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="hover:text-white transition-colors cursor-pointer text-left"
+                    onClick={() => scrollToSection(link.id)}
+                    className="flex items-center gap-2 text-slate-500 hover:text-royal text-sm font-medium transition-colors group cursor-pointer"
                   >
+                    <ChevronRight className="w-4 h-4 text-royal/40 group-hover:text-royal group-hover:translate-x-1 transition-all" />
                     {link.label}
                   </button>
                 </li>
@@ -107,77 +108,67 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Details */}
-          {/* Contact Details */}
+          {/* Services */}
           <div>
-            <h4 className="font-bold text-sm tracking-widest uppercase text-royal-light mb-5">
-              Campus Office
+            <h4 className="font-extrabold text-navy-deep text-lg mb-6 flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-gold"></div>
+              Courses/Services
             </h4>
-
-            <ul className="space-y-4 text-slate-400 text-sm">
-
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                <span>
-                  2/428 Ammans Nagar Teachers Colony, NGGO Colony,
-                  Coimbatore, Tamil Nadu 641022
-                </span>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-gold shrink-0" />
-                <span>+91 9944787805</span>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-gold shrink-0" />
-                <span>futurefocusacademy1991@gmail.com</span>
-              </li>
-
+            <ul className="space-y-3">
+              {services.map((service, idx) => (
+                <li key={idx} className="flex items-center gap-2 text-slate-500 text-sm font-medium">
+                  <div className="w-1.5 h-1.5 rounded-full bg-slate-200"></div>
+                  <span className="hover:text-royal transition-colors cursor-pointer">{service}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter Subscription */}
+          {/* Contact Details */}
           <div>
-            <h4 className="font-bold text-sm tracking-widest uppercase text-royal-light mb-5">Newsletter</h4>
-            <p className="text-slate-400 text-sm mb-4">
-              Subscribe to stay updated on our scholarship deadlines, coding workshops, and campus placement drives.
-            </p>
-
-            {!subscribed ? (
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  required
-                  placeholder="name@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-royal focus:ring-1 focus:ring-royal"
-                />
-                <button
-                  type="submit"
-                  className="p-2.5 bg-royal hover:bg-royal-light rounded-xl transition-colors cursor-pointer"
-                >
-                  <Send className="w-4 h-4" />
-                </button>
-              </form>
-            ) : (
-              <div className="flex items-center gap-2 text-green-400 text-xs font-semibold bg-green-500/10 border border-green-500/20 px-3 py-2.5 rounded-xl">
-                <CheckCircle2 className="w-4 h-4" />
-                Subscribed successfully!
-              </div>
-            )}
+            <h4 className="font-extrabold text-navy-deep text-lg mb-6 flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-royal"></div>
+              Contact Us
+            </h4>
+            <ul className="space-y-5 text-slate-500 text-sm font-medium">
+              <li className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8FBFF] border border-[#EAF4FF] hover:border-royal/20 transition-colors group">
+                <MapPin className="w-5 h-5 text-royal shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="leading-relaxed">
+                  2/428 Ammans Nagar Teachers Colony, <br/>
+                  NGGO Colony, Coimbatore, <br/>
+                  Tamil Nadu – 641022
+                </span>
+              </li>
+              <li className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-full bg-[#EAF4FF] flex items-center justify-center shrink-0 group-hover:bg-royal transition-colors">
+                  <Phone className="w-4 h-4 text-royal group-hover:text-white transition-colors" />
+                </div>
+                <span className="hover:text-royal transition-colors cursor-pointer">9944787805</span>
+              </li>
+              <li className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-full bg-[#EAF4FF] flex items-center justify-center shrink-0 group-hover:bg-royal transition-colors">
+                  <Mail className="w-4 h-4 text-royal group-hover:text-white transition-colors" />
+                </div>
+                <span className="hover:text-royal transition-colors cursor-pointer truncate">futurefocusacademy1991@gmail.com</span>
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs gap-4">
-          <p>© {new Date().getFullYear()} Future Focus Academy. All rights reserved.</p>
+        {/* Bottom Copyright Bar */}
+        <div className="border-t border-slate-200/60 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 bg-[#F8FBFF] px-6 py-4 rounded-2xl">
+          <p className="text-slate-500 text-sm font-medium text-center md:text-left">
+            © 2025 Future Focus Academy. All Rights Reserved.
+          </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-slate-300">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300">Terms of Service</a>
-            <button onClick={scrollUp} className="hover:text-slate-300 font-bold uppercase tracking-wider cursor-pointer">
+            <p className="text-royal text-sm font-semibold hidden md:block">
+              Designed for modern career-focused learning.
+            </p>
+            <button 
+              onClick={scrollUp} 
+              className="text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-royal transition-colors cursor-pointer bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100"
+            >
               Back to Top ↑
             </button>
           </div>

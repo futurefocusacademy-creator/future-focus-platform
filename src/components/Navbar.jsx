@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import navbarLogo from '../assets/navbar-logo.png';
 
 export default function Navbar() {
 
@@ -16,7 +17,6 @@ export default function Navbar() {
     { label: 'Courses', id: 'courses' },
     { label: 'Features', id: 'features' },
     { label: 'Success Stories', id: 'success-stories' },
-    { label: 'Gallery', id: 'gallery' },
     { label: 'FAQ', id: 'faq' },
     { label: 'Contact', id: 'contact' }
   ];
@@ -90,83 +90,69 @@ export default function Navbar() {
   };
 
   return (
+    <nav className="fixed top-4 left-0 w-full z-50 px-4 flex justify-center">
+      <div className="w-auto glass rounded-full px-6 py-3 flex items-center justify-between gap-12 transition-all duration-300 hover:glow-blue">
 
-    <nav className="fixed top-0 left-0 w-full z-50 px-4 py-3">
+        {/* Logo */}
+        <div
+          className="flex-shrink-0 cursor-pointer flex items-center mr-10"
+          onClick={() => handleNavClick('home')}
+        >
+          <img
+            src={navbarLogo}
+            alt="Future Focus Academy"
+            className="h-[34px] md:h-[38px] lg:h-[42px] w-auto object-contain hover:scale-[1.03] transition-all duration-300"
+          />
+        </div>
 
-      <div className="max-w-4xl mx-auto">
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`relative text-[14px] font-semibold transition-all duration-300 hover:text-royal-light ${activeSection === item.id
+                ? 'text-royal'
+                : 'text-navy-deep'
+                }`}
+            >
+              {item.label}
+              {activeSection === item.id && (
+                <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-1.5 h-1.5 rounded-full bg-royal shadow-[0_0_10px_rgba(11,96,176,0.8)]"></span>
+              )}
+            </button>
+          ))}
+        </div>
 
-        {/* Main Navbar */}
-        <div className="bg-white/95 backdrop-blur-xl border border-[#0B60B0]/20 rounded-[22px] shadow-[0_0_40px_rgba(11,96,176,0.28)] h-[64px] px-3 flex items-center justify-center transition-all duration-300">
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 rounded-full hover:bg-slate-100 transition-colors"
+        >
+          {isOpen ? (
+            <X className="w-6 h-6 text-navy-deep" />
+          ) : (
+            <Menu className="w-6 h-6 text-navy-deep" />
+          )}
+        </button>
+      </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-10">
-
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="lg:hidden absolute top-20 left-4 right-4 glass-card p-6 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="flex flex-col gap-5">
             {navItems.map((item) => (
-
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative text-[15px] font-semibold transition-all duration-300 ${activeSection === item.id
-                    ? 'text-[#0B60B0]'
-                    : 'text-slate-600 hover:text-[#0B60B0]'
-                  }`}
+                className="text-left text-navy-deep hover:text-royal font-semibold text-base transition-colors"
               >
-
                 {item.label}
-
-                {activeSection === item.id && (
-                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-1.5 h-1.5 rounded-full bg-[#0B60B0] shadow-[0_0_10px_rgba(11,96,176,0.8)]"></span>
-                )}
-
               </button>
-
             ))}
-
           </div>
-
-          {/* Mobile Menu */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden absolute right-5 p-2 rounded-full hover:bg-slate-100 transition-colors"
-          >
-
-            {isOpen ? (
-              <X className="w-6 h-6 text-slate-700" />
-            ) : (
-              <Menu className="w-6 h-6 text-slate-700" />
-            )}
-
-          </button>
-
         </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-
-          <div className="lg:hidden mt-3 bg-white rounded-[24px] border border-[#0B60B0]/20 shadow-[0_0_25px_rgba(11,96,176,0.15)] p-6 animate-in fade-in slide-in-from-top-4 duration-300">
-
-            <div className="flex flex-col gap-5">
-
-              {navItems.map((item) => (
-
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className="text-left text-slate-700 hover:text-[#0B60B0] font-semibold text-base transition-colors"
-                >
-                  {item.label}
-                </button>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        )}
-
-      </div>
-
+      )}
     </nav>
   );
 }

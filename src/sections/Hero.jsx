@@ -1,354 +1,102 @@
 import React, { useState, useEffect } from 'react';
-import { Award, Users, BookOpen, Star, ArrowRight } from 'lucide-react';
-import focusLogo from '../assets/client-logo.png';
+import { ArrowRight } from 'lucide-react';
+
+const images = [
+  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80'
+];
 
 export default function Hero() {
-
-  const [activeCounter, setActiveCounter] = useState({
-    students: 1000,
-    placement: 90,
-    partners: 50,
-    mentors: 25
-  });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-
-    const intervals = [];
-
-    const targets = {
-      students: 2500,
-      placement: 96,
-      partners: 120,
-      mentors: 45
-    };
-
-    Object.keys(targets).forEach((key) => {
-
-      let current = activeCounter[key];
-      const target = targets[key];
-      const step = Math.ceil((target - current) / 30);
-
-      const timer = setInterval(() => {
-
-        current += step;
-
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-
-        setActiveCounter((prev) => ({
-          ...prev,
-          [key]: current
-        }));
-
-      }, 50);
-
-      intervals.push(timer);
-
-    });
-
-    return () => intervals.forEach(clearInterval);
-
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
   }, []);
 
   const scrollToCourses = () => {
-    document
-      .getElementById('courses')
-      ?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
-    document
-      .getElementById('contact')
-      ?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-
-    <section
-      id="home"
-      className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-soft"
-    >
-
-      {/* Background Glow */}
-      <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-royal/10 rounded-full blur-[100px] animate-pulse-glow pointer-events-none"></div>
-
-      <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-gold/10 rounded-full blur-[100px] animate-pulse-glow pointer-events-none"></div>
-
-      {/* Dot Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#0b60b0_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
-
-      {/* Main Container */}
-      <div className="container mx-auto px-6 relative z-10">
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 items-center">
-
-          {/* LEFT SIDE */}
-          <div className="space-y-8 text-center lg:text-left animate-in fade-in slide-in-from-left-8 duration-1000">
-
-            {/* Premium Logo */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-white/90 backdrop-blur-xl rounded-[28px] px-6 py-5 shadow-[0_20px_50px_rgba(11,96,176,0.08)] border border-slate-100 hover:scale-105 transition-all duration-500">
-
-                <img
-                  src={focusLogo}
-                  alt="Future Focus Academy Logo"
-                  className="w-[220px] sm:w-[280px] lg:w-[320px] h-auto object-contain"
-                />
-
-              </div>
-
-            </div>
-
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
-
-              {[
-                {
-                  text: 'Placement Support',
-                  color:
-                    'border-royal/30 bg-royal/5 text-royal'
-                },
-                {
-                  text: 'Industry-Focused Training',
-                  color:
-                    'border-gold/30 bg-gold/5 text-gold'
-                },
-                {
-                  text: 'Corporate Training',
-                  color:
-                    'border-royal/30 bg-royal/5 text-royal'
-                },
-                {
-                  text: 'Skill Development',
-                  color:
-                    'border-gold/30 bg-gold/5 text-gold'
-                }
-              ].map((badge, idx) => (
-
-                <div
-                  key={idx}
-                  className={`text-xs font-bold px-3 py-1.5 rounded-full border shadow-sm hover:scale-105 transition-all duration-300 select-none ${badge.color}`}
-                >
-                  {badge.text}
-                </div>
-
-              ))}
-
-            </div>
-
-            {/* Heading */}
-            <div className="space-y-4">
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-navy-deep leading-tight">
-
-                Shape Your Future <br />
-
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-royal via-royal-light to-gold">
-                  with Confidence
-                </span>
-
-              </h1>
-
-              <p className="max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-500 leading-relaxed font-medium">
-
-                Future Focus Academy empowers students and professionals with career-focused learning, communication excellence, technical expertise, and placement-oriented training.
-
-              </p>
-
-            </div>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-
-              <button
-                onClick={scrollToCourses}
-                className="btn-gold px-8 py-4 text-base"
-              >
-                Explore Services
-                <ArrowRight className="w-5 h-5" />
-              </button>
-
-              <button
-                onClick={scrollToContact}
-                className="btn-secondary px-8 py-4 text-base"
-              >
-                Contact Us
-              </button>
-
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-200">
-
-              {[
-                {
-                  value: activeCounter.students,
-                  suffix: '+',
-                  label: 'Students Trained',
-                  icon: Users
-                },
-                {
-                  value: activeCounter.placement,
-                  suffix: '%',
-                  label: 'Placement Rate',
-                  icon: Award
-                },
-                {
-                  value: activeCounter.partners,
-                  suffix: '+',
-                  label: 'Hiring Partners',
-                  icon: Star
-                },
-                {
-                  value: activeCounter.mentors,
-                  suffix: '+',
-                  label: 'Expert Trainers',
-                  icon: BookOpen
-                }
-              ].map((stat, idx) => (
-
-                <div key={idx} className="space-y-1">
-
-                  <div className="flex items-center justify-center lg:justify-start gap-1.5 text-royal">
-
-                    <stat.icon className="w-4 h-4 text-gold" />
-
-                    <span className="text-2xl sm:text-3xl font-extrabold text-navy-deep">
-                      {stat.value.toLocaleString()}
-                      {stat.suffix}
-                    </span>
-
-                  </div>
-
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-
-                </div>
-
-              ))}
-
-            </div>
-
+    <section id="home" className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-center overflow-hidden">
+      
+      {/* Full-Width Background Slider */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-[2000ms] ease-in-out ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={src}
+              alt="Academy Experience"
+              className="w-full h-full object-cover transform transition-transform duration-[15000ms] ease-linear"
+              style={{ transform: index === currentIndex ? 'scale(1.1)' : 'scale(1)' }}
+            />
           </div>
+        ))}
+      </div>
+      
+      {/* Subtle Dark Overlay for Text Readability */}
+      <div className="absolute inset-0 z-10 bg-black/50 pointer-events-none"></div>
 
-          {/* RIGHT SIDE */}
-          <div className="relative flex justify-center items-center lg:justify-end z-10">
+      {/* Main Content Area */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col justify-center h-full pt-20">
+        
+        <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 text-white rounded-full text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-md">
+            Future Focus Academy
+          </div>
+          
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
+            Shape Your Future <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#64B5F6] to-[#E3F2FD]">With Confidence</span>
+          </h1>
+          
+          <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-medium max-w-2xl drop-shadow-md">
+            Empowering students through communication, technical, placement and career-focused training.
+          </p>
 
-            <div className="relative w-full max-w-xl">
-
-              <div className="rounded-[32px] p-8 border border-slate-200 shadow-2xl bg-white overflow-hidden">
-
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-royal/10 text-royal font-bold text-xs mb-6">
-                  Premium Training Institute
-                </div>
-
-                {/* Title */}
-                <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy-deep mb-4">
-                  Future Focus Academy
-                </h2>
-
-                {/* Description */}
-                <p className="text-slate-500 text-base leading-relaxed mb-8">
-                  Empowering students and professionals with placement-focused training, communication excellence, technical expertise, and career development programs.
-                </p>
-
-                {/* Image */}
-                <div className="relative rounded-3xl overflow-hidden mb-8">
-
-                  <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-                    alt="Students Learning"
-                    className="w-full h-[320px] object-cover"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-
-                  <div className="absolute bottom-4 left-4 text-white">
-
-                    <p className="text-sm font-semibold uppercase tracking-wider">
-                      Career-Focused Learning
-                    </p>
-
-                    <h3 className="text-2xl font-bold">
-                      Learn. Grow. Get Placed.
-                    </h3>
-
-                  </div>
-
-                </div>
-
-                {/* Cards */}
-                <div className="grid grid-cols-2 gap-4">
-
-                  <div className="rounded-2xl bg-royal/10 p-5 border border-royal/10">
-                    <h4 className="text-3xl font-extrabold text-royal">
-                      120+
-                    </h4>
-
-                    <p className="text-sm text-slate-500 mt-1">
-                      Hiring Partners
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-gold/10 p-5 border border-gold/10">
-                    <h4 className="text-3xl font-extrabold text-gold">
-                      96%
-                    </h4>
-
-                    <p className="text-sm text-slate-500 mt-1">
-                      Placement Support
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-green-500/10 p-5 border border-green-500/10">
-                    <h4 className="text-lg font-extrabold text-green-500">
-                      Corporate Training
-                    </h4>
-
-                    <p className="text-sm text-slate-500 mt-1">
-                      Industry-Focused Programs
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-purple-500/10 p-5 border border-purple-500/10">
-                    <h4 className="text-lg font-extrabold text-purple-500">
-                      Power BI | Python
-                    </h4>
-
-                    <p className="text-sm text-slate-500 mt-1">
-                      Technical Excellence
-                    </p>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
+          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+            <button
+              onClick={scrollToCourses}
+              className="group px-8 py-4 bg-royal hover:bg-navy-deep text-white rounded-xl text-lg font-bold transition-all duration-300 shadow-[0_8px_25px_rgba(11,96,176,0.3)] hover:shadow-[0_12px_35px_rgba(11,96,176,0.4)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-3"
+            >
+              Explore Courses
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <button
+              onClick={scrollToContact}
+              className="px-8 py-4 bg-white hover:bg-[#F8FBFF] text-navy-deep border border-slate-200 hover:border-royal/30 rounded-xl text-lg font-bold transition-all duration-300 shadow-sm hover:shadow-[0_8px_25px_rgba(11,96,176,0.1)] hover:-translate-y-1 w-full sm:w-auto"
+            >
+              Contact Us
+            </button>
           </div>
 
         </div>
-
       </div>
-
+      
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-70 pointer-events-none">
-
-        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-80 z-20">
+        <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-white bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
           Scroll Down
         </span>
-
-        <div className="w-5 h-8 rounded-full border-2 border-slate-300 relative">
-
-          <div className="w-1.5 h-1.5 rounded-full bg-royal absolute top-1.5 left-1/2 -translate-x-1/2 animate-scroll-down"></div>
-
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 relative flex justify-center bg-black/20 backdrop-blur-sm">
+          <div className="w-1.5 h-1.5 rounded-full bg-white absolute top-2 animate-scroll-down shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
         </div>
-
       </div>
 
     </section>

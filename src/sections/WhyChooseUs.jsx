@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="features" className="relative py-24 bg-soft dark:bg-navy-dark transition-colors duration-500 scroll-mt-16 overflow-hidden">
+    <section id="features" className="relative py-24 bg-soft  transition-colors duration-500 scroll-mt-16 overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-royal/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -64,14 +64,14 @@ export default function WhyChooseUs() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-full text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10  text-royal  rounded-full text-xs font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
             Academy Advantages
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep dark:text-white tracking-tight">
-            Why Choose Future Focus <span className="text-royal dark:text-royal-light">Academy</span>?
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep  tracking-tight">
+            Why Choose Future Focus <span className="text-royal ">Academy</span>?
           </h2>
-          <p className="text-slate-500 dark:text-slate-300 font-medium">
+          <p className="text-slate-500  font-medium">
             We provide a unique blend of industry immersion, modern resources, and career acceleration.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={idx}
-                className="glass-card p-6 border border-white/20 dark:border-white/5 hover:scale-[1.03] hover:border-royal/30 dark:hover:border-royal-light/20 hover:shadow-2xl hover:shadow-royal/10 dark:hover:shadow-royal/15 transition-all duration-500 text-left relative group overflow-hidden"
+                className="glass-card p-6 border border-white/20  hover:scale-[1.03] hover:border-royal/30 :border-royal-light/20 hover:shadow-2xl hover:shadow-royal/10 :shadow-royal/15 transition-all duration-500 text-left relative group overflow-hidden"
               >
                 {/* Visual Glow Spotlight inside card */}
                 <div className="absolute -top-12 -left-12 w-24 h-24 bg-gradient-to-tr from-royal/10 to-transparent rounded-full group-hover:scale-[2.5] duration-700 pointer-events-none"></div>
@@ -94,12 +94,12 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-extrabold text-base text-navy-deep dark:text-white mb-2 relative z-10 group-hover:text-royal dark:group-hover:text-royal-light transition-colors">
+                <h3 className="font-extrabold text-base text-navy-deep  mb-2 relative z-10 group-hover:text-royal :text-royal-light transition-colors">
                   {feat.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium relative z-10">
+                <p className="text-xs text-slate-500  leading-relaxed font-medium relative z-10">
                   {feat.desc}
                 </p>
 

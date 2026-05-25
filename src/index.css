@@ -14,10 +14,6 @@
     @apply bg-soft text-navy-deep transition-colors duration-500 overflow-x-hidden;
   }
 
-  body.dark {
-    @apply bg-navy-dark text-white;
-  }
-
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -36,33 +32,17 @@
     @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-lg;
   }
   
-  .dark .glass {
-    @apply bg-navy-deep/60 backdrop-blur-md border border-white/10 shadow-2xl;
-  }
-
   .glass-card {
     @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-xl rounded-2xl transition-all duration-500;
   }
   
-  .dark .glass-card {
-    @apply bg-navy-card/50 backdrop-blur-lg border border-white/5 shadow-2xl rounded-2xl transition-all duration-500;
-  }
-
   /* Glow Effects */
   .glow-blue {
     @apply shadow-[0_0_30px_rgba(11,96,176,0.25)];
   }
 
-  .dark .glow-blue {
-    @apply shadow-[0_0_40px_rgba(11,96,176,0.4)];
-  }
-
   .glow-gold {
     @apply shadow-[0_0_30px_rgba(212,175,55,0.2)];
-  }
-
-  .dark .glow-gold {
-    @apply shadow-[0_0_40px_rgba(212,175,55,0.35)];
   }
 
   /* Interactive Elements */
@@ -71,7 +51,7 @@
   }
 
   .btn-secondary {
-    @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold text-navy-deep dark:text-white bg-transparent border border-navy-deep/20 dark:border-white/20 hover:bg-royal/10 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2;
+    @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold text-navy-deep bg-transparent border border-navy-deep/20 hover:bg-royal/10 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2;
   }
 
   .btn-gold {
@@ -82,10 +62,6 @@
 /* Utilities */
 .text-gradient-primary {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-deep via-royal to-royal-light;
-}
-
-.dark .text-gradient-primary {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-royal-light to-gold-light;
 }
 
 .text-gradient-gold {
@@ -100,9 +76,4 @@
   opacity: 0.3;
   z-index: 0;
   pointer-events: none;
-}
-
-.dark .glow-orb {
-  opacity: 0.45;
-  filter: blur(100px);
 }

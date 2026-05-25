@@ -4,12 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         navy: {
-          deep: '#071952',
+          deep: '#0F172A',
           dark: '#020b26',
           light: '#132863',
           card: '#0a1d56',
@@ -17,14 +16,14 @@ export default {
         royal: {
           DEFAULT: '#0B60B0',
           dark: '#084885',
-          light: '#3b8dd9',
+          light: '#1E88E5',
         },
         gold: {
           DEFAULT: '#D4AF37',
           light: '#e5c05c',
           dark: '#b39025',
         },
-        soft: '#F5F7FA',
+        soft: '#EAF4FF',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'Poppins', 'sans-serif'],

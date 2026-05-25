@@ -68,7 +68,7 @@ export default function Courses() {
       level: 'All Levels',
       desc: 'Transform raw datasets into stunning interactive intelligence dashboards. Learn industrial business analysis from data integration to analytics.',
       topics: ['Dashboards', 'Data Visualization', 'Reports', 'Business Analytics', 'Data Insights'],
-      badgeColor: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+      badgeColor: 'bg-amber-500/10 text-amber-600  border-amber-500/20',
       glowClass: 'hover:shadow-amber-500/10 hover:border-amber-500/30'
     },
     {
@@ -78,7 +78,7 @@ export default function Courses() {
       level: 'Beginner to Pro',
       desc: 'Construct robust modern web ecosystems from database nodes to interactive frontend UI. Complete immersive industry-grade curriculum.',
       topics: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'MongoDB', 'APIs'],
-      badgeColor: 'bg-royal/10 text-royal dark:text-royal-light border-royal/20',
+      badgeColor: 'bg-royal/10 text-royal  border-royal/20',
       glowClass: 'hover:shadow-royal/10 hover:border-royal/30'
     },
     {
@@ -88,7 +88,7 @@ export default function Courses() {
       level: 'Beginner to Pro',
       desc: 'Establish solid logical fundamentals using the world\'s most popular language. Master scripting, data structures, and automation algorithms.',
       topics: ['Python Basics', 'Functions', 'File Handling', 'Data Structures', 'Mini Projects'],
-      badgeColor: 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20',
+      badgeColor: 'bg-green-500/10 text-green-600  border-green-500/20',
       glowClass: 'hover:shadow-green-500/10 hover:border-green-500/30'
     }
   ];
@@ -109,7 +109,7 @@ export default function Courses() {
   };
 
   return (
-    <section id="courses" className="relative py-24 bg-white dark:bg-navy-dark/50 transition-colors duration-500 scroll-mt-16 overflow-hidden">
+    <section id="courses" className="relative py-24 bg-white  transition-colors duration-500 scroll-mt-16 overflow-hidden">
       
       {/* Decorative Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-royal/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -118,23 +118,23 @@ export default function Courses() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-full text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10  text-royal  rounded-full text-xs font-bold uppercase tracking-widest">
             <GraduationCap className="w-3.5 h-3.5 text-gold" />
             Academy Showcase
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep dark:text-white tracking-tight">
-            Explore Our Comprehensive <span className="text-royal dark:text-royal-light">Offerings</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep  tracking-tight">
+            Explore Our Comprehensive <span className="text-royal ">Offerings</span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-300 font-medium">
+          <p className="text-slate-500  font-medium">
             Unlock professional competence with our dual-pane spectrum of corporate solutions and future-ready engineering training.
           </p>
         </div>
 
         {/* Double-Pane Controls & Search */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 pb-6 border-b border-navy-deep/5 dark:border-white/5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 pb-6 border-b border-navy-deep/5 ">
           
           {/* Double-Pane Switcher Tabs */}
-          <div className="flex bg-soft dark:bg-navy-deep/30 p-1.5 rounded-full border border-navy-deep/5 dark:border-white/5 w-full md:w-auto">
+          <div className="flex bg-soft  p-1.5 rounded-full border border-navy-deep/5  w-full md:w-auto">
             <button
               onClick={() => {
                 setActivePane('services');
@@ -143,7 +143,7 @@ export default function Courses() {
               className={`flex-1 md:flex-initial px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap cursor-pointer ${
                 activePane === 'services'
                   ? 'bg-royal text-white shadow-md shadow-royal/20'
-                  : 'text-navy-deep/60 dark:text-white/60 hover:text-navy-deep dark:hover:text-white'
+                  : 'text-navy-deep/60  hover:text-navy-deep :text-white'
               }`}
             >
               Services We Provide
@@ -156,7 +156,7 @@ export default function Courses() {
               className={`flex-1 md:flex-initial px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap cursor-pointer ${
                 activePane === 'technical'
                   ? 'bg-royal text-white shadow-md shadow-royal/20'
-                  : 'text-navy-deep/60 dark:text-white/60 hover:text-navy-deep dark:hover:text-white'
+                  : 'text-navy-deep/60  hover:text-navy-deep :text-white'
               }`}
             >
               Technical Training
@@ -170,7 +170,7 @@ export default function Courses() {
               placeholder={activePane === 'services' ? "Search services..." : "Search topics (e.g. React)..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-soft dark:bg-navy-deep/40 border border-navy-deep/5 dark:border-white/10 rounded-full pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-royal text-navy-deep dark:text-white transition-colors"
+              className="w-full bg-soft  border border-navy-deep/5  rounded-full pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-royal text-navy-deep  transition-colors"
             />
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           </div>
@@ -187,37 +187,37 @@ export default function Courses() {
                 return (
                   <div
                     key={idx}
-                    className="glass-card flex flex-col justify-between p-6 border border-white/20 dark:border-white/5 hover:scale-[1.02] hover:shadow-xl hover:shadow-royal/5 hover:border-royal/30 dark:hover:border-royal-light/20 duration-500 text-left relative overflow-hidden group"
+                    className="glass-card flex flex-col justify-between p-6 border border-white/20  hover:scale-[1.02] hover:shadow-xl hover:shadow-royal/5 hover:border-royal/30 :border-royal-light/20 duration-500 text-left relative overflow-hidden group"
                   >
                     <div>
                       {/* Service Icon */}
-                      <div className="w-12 h-12 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-12 h-12 bg-royal/10  text-royal  rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-6 h-6" />
                       </div>
 
                       {/* Service Title */}
-                      <h3 className="font-extrabold text-base sm:text-lg text-navy-deep dark:text-white mb-3 group-hover:text-royal dark:group-hover:text-royal-light transition-colors">
+                      <h3 className="font-extrabold text-base sm:text-lg text-navy-deep  mb-3 group-hover:text-royal :text-royal-light transition-colors">
                         {service.title}
                       </h3>
 
                       {/* Service Description */}
-                      <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed font-medium mb-6">
+                      <p className="text-slate-500  text-xs sm:text-sm leading-relaxed font-medium mb-6">
                         {service.desc}
                       </p>
                     </div>
 
                     {/* Features List */}
-                    <div className="space-y-2 pt-4 border-t border-navy-deep/5 dark:border-white/5 mt-auto">
+                    <div className="space-y-2 pt-4 border-t border-navy-deep/5  mt-auto">
                       {service.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 dark:text-slate-300">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-royal dark:text-royal-light shrink-0" />
+                        <div key={fIdx} className="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 ">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-royal  shrink-0" />
                           <span>{feat}</span>
                         </div>
                       ))}
                       
                       <button
                         onClick={() => triggerEnroll(service.title)}
-                        className="w-full mt-4 py-2 bg-royal/5 hover:bg-royal text-royal dark:text-royal-light hover:text-white rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+                        className="w-full mt-4 py-2 bg-royal/5 hover:bg-royal text-royal  hover:text-white rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         Inquire Service <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
@@ -231,7 +231,7 @@ export default function Courses() {
               <div className="w-16 h-16 bg-royal/5 rounded-full flex items-center justify-center text-royal mb-4">
                 <Search className="w-8 h-8" />
               </div>
-              <h4 className="font-extrabold text-lg text-navy-deep dark:text-white">No services match your query</h4>
+              <h4 className="font-extrabold text-lg text-navy-deep ">No services match your query</h4>
               <p className="text-sm text-slate-400 mt-1">Try adapting your search keyword.</p>
             </div>
           )
@@ -244,16 +244,16 @@ export default function Courses() {
                 return (
                   <div
                     key={idx}
-                    className={`glass-card flex flex-col justify-between p-8 border border-white/20 dark:border-white/5 hover:scale-[1.01] hover:shadow-2xl duration-500 text-left relative overflow-hidden group ${tech.glowClass}`}
+                    className={`glass-card flex flex-col justify-between p-8 border border-white/20  hover:scale-[1.01] hover:shadow-2xl duration-500 text-left relative overflow-hidden group ${tech.glowClass}`}
                   >
                     <div>
                       {/* Header details */}
                       <div className="flex justify-between items-start mb-6">
-                        <div className="w-14 h-14 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-14 h-14 bg-royal/10  text-royal  rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Icon className="w-8 h-8" />
                         </div>
                         <div className="flex flex-col items-end gap-1.5">
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 bg-royal/5 dark:bg-royal/20 text-royal dark:text-royal-light rounded-full border border-royal/10">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 bg-royal/5  text-royal  rounded-full border border-royal/10">
                             {tech.duration}
                           </span>
                           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
@@ -263,18 +263,18 @@ export default function Courses() {
                       </div>
 
                       {/* Technical Title */}
-                      <h3 className="font-black text-xl sm:text-2xl text-navy-deep dark:text-white mb-4 group-hover:text-royal dark:group-hover:text-royal-light transition-colors">
+                      <h3 className="font-black text-xl sm:text-2xl text-navy-deep  mb-4 group-hover:text-royal :text-royal-light transition-colors">
                         {tech.title}
                       </h3>
 
                       {/* Technical Description */}
-                      <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed font-medium mb-6">
+                      <p className="text-slate-500  text-xs sm:text-sm leading-relaxed font-medium mb-6">
                         {tech.desc}
                       </p>
                     </div>
 
                     {/* Topics Showcase */}
-                    <div className="space-y-4 pt-6 border-t border-navy-deep/5 dark:border-white/5 mt-auto">
+                    <div className="space-y-4 pt-6 border-t border-navy-deep/5  mt-auto">
                       <div>
                         <p className="text-[10px] uppercase font-black tracking-widest text-slate-400 mb-3">
                           Program Curriculum Topics:
@@ -307,7 +307,7 @@ export default function Courses() {
               <div className="w-16 h-16 bg-royal/5 rounded-full flex items-center justify-center text-royal mb-4">
                 <Search className="w-8 h-8" />
               </div>
-              <h4 className="font-extrabold text-lg text-navy-deep dark:text-white">No technical programs match your query</h4>
+              <h4 className="font-extrabold text-lg text-navy-deep ">No technical programs match your query</h4>
               <p className="text-sm text-slate-400 mt-1">Try typing a keyword like "React" or "Basics".</p>
             </div>
           )

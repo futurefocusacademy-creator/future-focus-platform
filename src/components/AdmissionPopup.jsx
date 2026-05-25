@@ -71,16 +71,16 @@ export default function AdmissionPopup() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/60 backdrop-blur-sm transition-opacity duration-300">
-      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white dark:bg-navy-deep p-6 sm:p-8 shadow-2xl border border-white/20 scale-100 transition-all duration-300">
+      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white  p-6 sm:p-8 shadow-2xl border border-white/20 scale-100 transition-all duration-300">
         
         {/* Glow behind */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-royal/10 dark:bg-royal/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 dark:bg-gold/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-48 h-48 bg-royal/10  rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10  rounded-full blur-3xl pointer-events-none"></div>
 
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 p-1.5 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full transition-colors text-slate-400 hover:text-navy-deep dark:hover:text-white"
+          className="absolute right-4 top-4 p-1.5 hover:bg-slate-100 :bg-white/10 rounded-full transition-colors text-slate-400 hover:text-navy-deep :text-white"
         >
           <X className="w-5 h-5" />
         </button>
@@ -92,11 +92,11 @@ export default function AdmissionPopup() {
               <span className="text-xs uppercase tracking-wider font-bold">Limited Seats Available</span>
             </div>
             
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-deep dark:text-white mb-2 leading-tight">
-              Admissions Open for <span className="text-royal dark:text-royal-light">2026 Batch</span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-deep  mb-2 leading-tight">
+              Admissions Open for <span className="text-royal ">2026 Batch</span>
             </h3>
             
-            <p className="text-sm text-slate-500 dark:text-slate-300 mb-6">
+            <p className="text-sm text-slate-500  mb-6">
               Apply today to receive career counseling, early-bird scholarships, and guaranteed placement training support.
             </p>
 
@@ -110,7 +110,7 @@ export default function AdmissionPopup() {
                   onChange={handleInputChange}
                   required
                   placeholder="John Doe"
-                  className="w-full bg-slate-50 dark:bg-navy-dark/40 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep dark:text-white transition-colors"
+                  className="w-full bg-slate-50  border border-slate-200  rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep  transition-colors"
                 />
               </div>
 
@@ -124,7 +124,7 @@ export default function AdmissionPopup() {
                     onChange={handleInputChange}
                     required
                     placeholder="john@example.com"
-                    className="w-full bg-slate-50 dark:bg-navy-dark/40 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep dark:text-white transition-colors"
+                    className="w-full bg-slate-50  border border-slate-200  rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep  transition-colors"
                   />
                 </div>
                 <div>
@@ -136,7 +136,7 @@ export default function AdmissionPopup() {
                     onChange={handleInputChange}
                     required
                     placeholder="+1 (234) 567-890"
-                    className="w-full bg-slate-50 dark:bg-navy-dark/40 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep dark:text-white transition-colors"
+                    className="w-full bg-slate-50  border border-slate-200  rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep  transition-colors"
                   />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function AdmissionPopup() {
                   value={formData.course}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-slate-50 dark:bg-navy-dark/40 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep dark:text-white transition-colors"
+                  className="w-full bg-slate-50  border border-slate-200  rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-royal text-navy-deep  transition-colors"
                 >
                   <option value="" disabled>Select a course</option>
                   {courses.map((course, idx) => (
@@ -169,9 +169,9 @@ export default function AdmissionPopup() {
         ) : (
           <div className="flex flex-col items-center justify-center py-12 text-center">
             <CheckCircle2 className="w-16 h-16 text-green-500 mb-4 animate-bounce" />
-            <h3 className="text-2xl font-bold text-navy-deep dark:text-white mb-2">Application Submitted!</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-300 max-w-sm">
-              Thank you, <span className="font-semibold text-royal dark:text-royal-light">{formData.name}</span>. An admissions counselor will call you within 24 hours to schedule your interview.
+            <h3 className="text-2xl font-bold text-navy-deep  mb-2">Application Submitted!</h3>
+            <p className="text-sm text-slate-500  max-w-sm">
+              Thank you, <span className="font-semibold text-royal ">{formData.name}</span>. An admissions counselor will call you within 24 hours to schedule your interview.
             </p>
           </div>
         )}

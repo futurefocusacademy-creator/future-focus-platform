@@ -31,7 +31,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-white dark:bg-navy-dark/50 transition-colors duration-500 scroll-mt-10 overflow-hidden">
+    <section id="about" className="relative py-24 bg-white  transition-colors duration-500 scroll-mt-10 overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-royal/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -40,14 +40,14 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10 dark:bg-royal/20 text-royal dark:text-royal-light rounded-full text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-royal/10  text-royal  rounded-full text-xs font-bold uppercase tracking-widest">
             <GraduationCap className="w-3.5 h-3.5 text-gold" />
             Academy Legacy
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep dark:text-white tracking-tight">
-            Redefining Technical <span className="text-royal dark:text-royal-light">Education</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-deep  tracking-tight">
+            Redefining Technical <span className="text-royal ">Education</span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-300 font-medium">
+          <p className="text-slate-500  font-medium">
             Future Focus Academy isn't just an institute; it's a launchpad for next-generation tech professionals. We build careers, not just credentials.
           </p>
         </div>
@@ -57,15 +57,15 @@ export default function About() {
           
           {/* Left Block: Narrative */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-deep dark:text-white leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-deep  leading-tight">
               An Immersive Learning Ecosystem Designed for Growth
             </h3>
             
-            <p className="text-slate-500 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-500  leading-relaxed text-sm sm:text-base">
               At Future Focus Academy, we understand that traditional educational methods are no longer sufficient to keep pace with the rapidly evolving technology landscape. That's why we have built a modern learning framework centered around real-world projects, live collaboration, and expert industry mentors.
             </p>
             
-            <p className="text-slate-500 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-500  leading-relaxed text-sm sm:text-base">
               Whether you are an aspiring software engineer, a mobile app developer, or looking to master the complexities of Artificial Intelligence and Data Science, we provide the resources, the environment, and the community to turn your ambitions into achievements.
             </p>
 
@@ -76,9 +76,9 @@ export default function About() {
                 { title: 'Placements', desc: '96% Success Rate', icon: Briefcase },
                 { title: 'Accredited', desc: 'Global Certificate', icon: Award }
               ].map((item, idx) => (
-                <div key={idx} className="p-3 bg-soft dark:bg-navy-deep/40 rounded-2xl text-center border border-navy-deep/5 dark:border-white/5">
-                  <item.icon className="w-5 h-5 mx-auto text-royal dark:text-royal-light mb-1.5" />
-                  <h4 className="text-xs font-bold text-navy-deep dark:text-white">{item.title}</h4>
+                <div key={idx} className="p-3 bg-soft  rounded-2xl text-center border border-navy-deep/5 ">
+                  <item.icon className="w-5 h-5 mx-auto text-royal  mb-1.5" />
+                  <h4 className="text-xs font-bold text-navy-deep ">{item.title}</h4>
                   <p className="text-[10px] text-slate-400 font-medium mt-0.5">{item.desc}</p>
                 </div>
               ))}
@@ -86,20 +86,20 @@ export default function About() {
           </div>
 
           {/* Right Block: Milestones / History Timeline */}
-          <div className="lg:col-span-5 relative bg-soft dark:bg-navy-deep/30 rounded-3xl p-6 sm:p-8 border border-navy-deep/5 dark:border-white/5 shadow-inner">
-            <h4 className="font-extrabold text-lg text-navy-deep dark:text-white mb-6 text-left">Our Milestone Timeline</h4>
+          <div className="lg:col-span-5 relative bg-soft  rounded-3xl p-6 sm:p-8 border border-navy-deep/5  shadow-inner">
+            <h4 className="font-extrabold text-lg text-navy-deep  mb-6 text-left">Our Milestone Timeline</h4>
             
             {/* Timeline */}
             <div className="relative border-l-2 border-royal/30 pl-6 space-y-6 text-left">
               {milestones.map((milestone, idx) => (
                 <div key={idx} className="relative group">
                   {/* Timeline dot */}
-                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-navy-deep border-2 border-royal group-hover:bg-gold transition-colors duration-300"></span>
+                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white  border-2 border-royal group-hover:bg-gold transition-colors duration-300"></span>
                   
                   <div className="space-y-0.5">
-                    <span className="text-xs font-bold text-royal dark:text-royal-light uppercase">{milestone.year}</span>
-                    <h5 className="font-bold text-sm text-navy-deep dark:text-white">{milestone.title}</h5>
-                    <p className="text-xs text-slate-400 dark:text-slate-400">{milestone.desc}</p>
+                    <span className="text-xs font-bold text-royal  uppercase">{milestone.year}</span>
+                    <h5 className="font-bold text-sm text-navy-deep ">{milestone.title}</h5>
+                    <p className="text-xs text-slate-400 ">{milestone.desc}</p>
                   </div>
                 </div>
               ))}
@@ -109,19 +109,19 @@ export default function About() {
         </div>
 
         {/* Bottom Grid: Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-navy-deep/5 dark:border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-navy-deep/5 ">
           {corePillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={idx}
-                className="glass-card p-6 text-left border border-white/20 dark:border-white/5 hover:scale-[1.02] duration-300 relative group"
+                className="glass-card p-6 text-left border border-white/20  hover:scale-[1.02] duration-300 relative group"
               >
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${pillar.color}`}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <h4 className="font-extrabold text-base text-navy-deep dark:text-white mb-2">{pillar.title}</h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                <h4 className="font-extrabold text-base text-navy-deep  mb-2">{pillar.title}</h4>
+                <p className="text-xs text-slate-500  leading-relaxed font-medium">
                   {pillar.description}
                 </p>
                 {/* Underline decorative glow */}

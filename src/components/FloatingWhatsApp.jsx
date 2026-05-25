@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
   return (
     <div className="fixed bottom-6 left-6 z-40 group">
       {/* Tooltip */}
-      <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-white dark:bg-navy-deep text-navy-deep dark:text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md border border-white/20 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+      <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-white  text-navy-deep  px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md border border-white/20 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         Chat with our advisor
       </span>
 
